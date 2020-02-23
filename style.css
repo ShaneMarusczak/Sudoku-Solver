@@ -6,6 +6,16 @@ html {
 	font-family: "Orbitron", sans-serif;
 }
 
+h1 {
+	font-size: 4vh;
+	margin-left: 10px;
+}
+
+body {
+	margin-left: 10vw;
+	margin-top: 5vh;
+}
+
 #s02,#s12,#s22,#s32,
 #s42,#s52,#s62,#s72,
 #s82, #s05, #s15, #s25,
@@ -36,7 +46,6 @@ html {
 #solution {
 	display: grid;
 	margin-right: 30px;
-	border: 1px solid black;
 }
 
 #sudoku > div > input:hover {
@@ -45,11 +54,11 @@ html {
 
 #solve {
 	margin-top: 20px;
-	width: 100px;
-	height: 50px;
 	font-family: "Orbitron", sans-serif;
-	font-size: x-large;
+	font-size: xx-large;
 	margin-bottom: 20px;
+	width: 150px;
+	height: 75px;
 }
 
 #boards {
@@ -57,12 +66,22 @@ html {
 	flex-direction: row;
 }
 
+@media screen and (max-width: 1410px) {
+	#sudoku > div,
+	#solution > div {
+		display: flex;
+	}
+	#boards {
+		flex-direction: column;
+	}
+}
+
 input {
 	border: 1px solid black;
-	width: 40px;
-	height: 40px;
+	width: 2em;
+	height: 2em;
 	text-align: center;
-	font-size: x-large;
+	font-size: xx-large;
 	background-color: aliceblue;
 }
 
