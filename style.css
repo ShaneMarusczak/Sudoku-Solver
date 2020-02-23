@@ -1,0 +1,23 @@
+#sudoku {
+	display: grid;
+	margin-right: 30px;
+}
+
+#solve {
+	margin-top: 20px;
+	width: 100px;
+	height: 50px;
+	font-size: large;
+}
+
+#boards {
+	display: flex;
+	flex-direction: row;
+}
+
+input {
+	border: 1px solid black;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+}
