@@ -9,6 +9,7 @@ html {
 h1 {
 	font-size: 4vh;
 	margin-left: 10px;
+	margin-bottom: 5px;
 }
 
 body {
@@ -114,4 +115,9 @@ a:hover {
 #updateText {
 	font-size: small;
 	margin-top: 10px;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: #ddd;
 }
