@@ -22,7 +22,6 @@
 			entry.id = "s" + i + j;
 			ans.id = "a" + i + j;
 			ans.readOnly = true;
-			entry.type = "number";
 		}
 	}
 
@@ -44,15 +43,17 @@
 	};
 
 	const validate = () => {
+		var rv = true;
 		const validValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ""];
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
 				if (!validValues.includes(document.getElementById("s" + y + x).value)) {
-					return false;
+					document.getElementById("s" + y + x).style.backgroundColor = "red";
+					rv = false;
 				}
 			}
 		}
-		return true;
+		return rv;
 	};
 
 	const solve = () => {
