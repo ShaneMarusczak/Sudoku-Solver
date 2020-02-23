@@ -21,3 +21,15 @@ input {
 	height: 30px;
 	text-align: center;
 }
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+
+#invalidmessage {
+	color: red;
+}
