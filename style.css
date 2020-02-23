@@ -49,7 +49,8 @@ body {
 	margin-right: 30px;
 }
 
-#sudoku > div > input:hover {
+#sudoku > div > input:hover,
+#sudoku > div > input:focus {
 	background-color: rgb(159, 205, 243);
 }
 

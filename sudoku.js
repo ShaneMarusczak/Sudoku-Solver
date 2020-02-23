@@ -63,6 +63,7 @@
 					for (let n = 1; n < 10; n++) {
 						if (possible(y, x, n)) {
 							copiedBoard[y][x] = n;
+							document.getElementById("a" + y + x).style.color = "red";
 							solve();
 							copiedBoard[y][x] = "";
 						}
