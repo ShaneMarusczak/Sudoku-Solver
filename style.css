@@ -1,13 +1,25 @@
-#sudoku {
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+
+
+html {
+	background-color: cornsilk;
+	font-family: "Orbitron", sans-serif;
+}
+
+#sudoku,
+#solution {
 	display: grid;
 	margin-right: 30px;
+	border: 1px solid black;
 }
 
 #solve {
 	margin-top: 20px;
 	width: 100px;
 	height: 50px;
-	font-size: large;
+	font-family: "Orbitron", sans-serif;
+	font-size: x-large;
+	margin-bottom: 20px;
 }
 
 #boards {
@@ -17,9 +29,11 @@
 
 input {
 	border: 1px solid black;
-	width: 30px;
-	height: 30px;
+	width: 40px;
+	height: 40px;
 	text-align: center;
+	font-size: x-large;
+	background-color: aliceblue;
 }
 
 .show {
@@ -32,4 +46,23 @@ input {
 
 #invalidmessage {
 	color: red;
+}
+
+#links {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+a:hover {
+	color:cadetblue;
+}
+
+#menu {
+	display: flex;
+	flex-direction: column;
+}
+
+#updateText {
+	font-size: small;
+	margin-top: 10px;
 }

@@ -41,14 +41,13 @@
 			}
 		}
 		solve();
-		displayAnswer();
 	};
 
 	const validate = () => {
-		const nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+		const validValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ""];
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
-				if (!nums.includes(document.getElementById("s" + y + x).value)) {
+				if (!validValues.includes(document.getElementById("s" + y + x).value)) {
 					return false;
 				}
 			}
@@ -69,6 +68,11 @@
 					}
 					return;
 				}
+			}
+		}
+		for (let y = 0; y < rows; y++) {
+			for (let x = 0; x < cols; x++) {
+				document.getElementById("a" + y + x).value = copiedBoard[y][x];
 			}
 		}
 	};
@@ -94,14 +98,6 @@
 			}
 		}
 		return true;
-	};
-
-	const displayAnswer = () => {
-		for (let y = 0; y < rows; y++) {
-			for (let x = 0; x < cols; x++) {
-				document.getElementById("a" + y + x).value = copiedBoard[y][x];
-			}
-		}
 	};
 
 	solveBtn.addEventListener("click", main);
