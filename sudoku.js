@@ -1,6 +1,8 @@
 "use strict";
 
 (function () {
+	let startTime;
+	let endTime;
 	const rows = 9;
 	const cols = 9;
 	const board = document.getElementById("sudoku");
@@ -47,6 +49,7 @@
 		const validValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ""];
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
+				document.getElementById("s" + y + x).style.backgroundColor = "aliceblue";
 				if (!validValues.includes(document.getElementById("s" + y + x).value)) {
 					document.getElementById("s" + y + x).style.backgroundColor = "red";
 					rv = false;
@@ -56,7 +59,21 @@
 		return rv;
 	};
 
+	const timeOutHandler = () => {
+		document.getElementById("timeoutmessage").classList.remove("hide");
+		document.getElementById("timeoutmessage").classList.add("show");
+		for (let y = 0; y < rows; y++) {
+			for (let x = 0; x < cols; x++) {
+				document.getElementById("a" + y + x).value = "";
+			}
+		}
+	};
+
 	const solve = () => {
+		if (Date.now() > endTime) {
+			timeOutHandler();
+			return;
+		}
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
 				if (copiedBoard[y][x] == "") {
@@ -102,5 +119,11 @@
 		return true;
 	};
 
-	solveBtn.addEventListener("click", main);
+	solveBtn.addEventListener("click", () => {
+		startTime = Date.now();
+		endTime = startTime + 6000;
+		document.getElementById("timeoutmessage").classList.remove("show");
+		document.getElementById("timeoutmessage").classList.add("hide");
+		main();
+	});
 })();

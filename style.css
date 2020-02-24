@@ -95,7 +95,8 @@ input {
 	display: none;
 }
 
-#invalidmessage {
+#invalidmessage,
+#timeoutmessage {
 	color: red;
 }
 
