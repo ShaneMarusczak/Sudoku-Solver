@@ -1,7 +1,6 @@
 "use strict";
 
 (function () {
-	let startTime;
 	let endTime;
 	const rows = 9;
 	const cols = 9;
@@ -120,8 +119,7 @@
 	};
 
 	solveBtn.addEventListener("click", () => {
-		startTime = Date.now();
-		endTime = startTime + 6000;
+		endTime = Date.now() + 6000;
 		document.getElementById("timeoutmessage").classList.remove("show");
 		document.getElementById("timeoutmessage").classList.add("hide");
 		main();
