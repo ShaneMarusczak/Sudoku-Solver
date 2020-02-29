@@ -79,7 +79,7 @@
 		}
 		if (confirm("No solution was found in time. Clear entries and retry?")) {
 			alert("Page will Reload.");
-			setInterval(() => location.reload(), 2000);
+			setInterval(() => location.reload(), 1000);
 		} else {
 			timedOut = false;
 			return;
