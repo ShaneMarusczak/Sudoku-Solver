@@ -109,18 +109,12 @@
 				}
 			}
 		}
-		let counter = 0;
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
 				document.getElementById("a" + y + x).value = copiedBoard[y][x];
-				if (document.getElementById("a" + y + x).value != "") {
-					counter++;
-				}
-				if (counter === 81) {
-					solved = true;
-				}
 			}
 		}
+		solved = true;
 	};
 
 	const possible = (y, x, n) => {
