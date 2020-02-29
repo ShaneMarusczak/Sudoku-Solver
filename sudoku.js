@@ -81,7 +81,6 @@
 			alert("Page will Reload.");
 			setInterval(() => location.reload(), 1000);
 		} else {
-			timedOut = false;
 			return;
 		}
 	};
@@ -162,6 +161,7 @@
 	});
 
 	solveBtn.addEventListener("click", () => {
+		timedOut = false;
 		endTime = Date.now() + 6000;
 		main();
 	});
