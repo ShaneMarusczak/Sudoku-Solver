@@ -49,7 +49,10 @@ body {
 	margin-right: 30px;
 }
 
-#sudoku > div > input:hover,
+.hovered {
+	background-color: rgb(159, 205, 243);
+}
+
 #sudoku > div > input:focus {
 	background-color: rgb(159, 205, 243);
 }
@@ -69,7 +72,7 @@ body {
 	flex-direction: row;
 }
 
-@media screen and (max-width: 1410px) {
+@media screen and (max-width: 1427px) {
 	#sudoku > div,
 	#solution > div {
 		display: flex;
@@ -115,6 +118,10 @@ a:hover {
 	flex-direction: column;
 }
 
+#btns {
+	flex-direction: row;
+}
+
 #updateText {
 	font-size: small;
 	margin-top: 10px;
@@ -123,4 +130,8 @@ a:hover {
 button:hover {
 	cursor: pointer;
 	background-color: #ddd;
+}
+
+button {
+	margin-right: 20px;
 }
