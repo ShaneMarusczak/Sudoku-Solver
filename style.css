@@ -54,7 +54,8 @@ body {
 	background-color: rgb(159, 205, 243);
 }
 
-#solve {
+#solve,
+#reset {
 	margin-top: 20px;
 	font-family: "Orbitron", sans-serif;
 	font-size: xx-large;

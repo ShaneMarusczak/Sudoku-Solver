@@ -6,8 +6,11 @@
 	const cols = 9;
 	const board = document.getElementById("sudoku");
 	const solveBtn = document.getElementById("solve");
+	const resetBtn = document.getElementById("reset");
 	const solution = document.getElementById("solution");
 	const copiedBoard = [];
+	let timedOut = false;
+	let solved = false;
 
 	for (let i = 0; i < rows; i++) {
 		copiedBoard.push([]);
@@ -59,17 +62,26 @@
 	};
 
 	const timeOutHandler = () => {
-		document.getElementById("timeoutmessage").classList.remove("hide");
-		document.getElementById("timeoutmessage").classList.add("show");
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
 				document.getElementById("a" + y + x).value = "";
 			}
 		}
+		if (confirm("No solution was found in time. Clear entries and retry?")) {
+			alert("Page will Reload.");
+			setInterval(() => location.reload(), 2000);
+		} else {
+			timedOut = false;
+			return;
+		}
 	};
 
 	const solve = () => {
+		if (timedOut || solved) {
+			return;
+		}
 		if (Date.now() > endTime) {
+			timedOut = true;
 			timeOutHandler();
 			return;
 		}
@@ -88,9 +100,16 @@
 				}
 			}
 		}
+		let counter = 0;
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
 				document.getElementById("a" + y + x).value = copiedBoard[y][x];
+				if (document.getElementById("a" + y + x).value != "") {
+					counter++;
+				}
+				if (counter === 81) {
+					solved = true;
+				}
 			}
 		}
 	};
@@ -118,10 +137,22 @@
 		return true;
 	};
 
+	const clearAnswers = () => {
+		for (let y = 0; y < rows; y++) {
+			for (let x = 0; x < cols; x++) {
+				document.getElementById("a" + y + x).value = "";
+				document.getElementById("a" + y + x).style.color = "black";
+			}
+		}
+	};
+
+	resetBtn.addEventListener("click", () => {
+		solved = false;
+		clearAnswers();
+	});
+
 	solveBtn.addEventListener("click", () => {
 		endTime = Date.now() + 6000;
-		document.getElementById("timeoutmessage").classList.remove("show");
-		document.getElementById("timeoutmessage").classList.add("hide");
 		main();
 	});
 })();
