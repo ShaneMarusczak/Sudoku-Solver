@@ -57,12 +57,12 @@ body {
 	background-color: rgb(159, 205, 243);
 }
 
-#solve,
-#reset {
-	margin-top: 20px;
-	font-family: "Orbitron", sans-serif;
-	font-size: xx-large;
+button {
+	margin-top: 25px;
+	margin-right: 20px;
 	margin-bottom: 20px;
+	font-family: "Orbitron", sans-serif;
+	font-size: x-large;
 	width: 150px;
 	height: 75px;
 }
@@ -99,27 +99,12 @@ input {
 	display: none;
 }
 
-#invalidmessage,
-#timeoutmessage {
+#invalidmessage {
 	color: red;
-}
-
-#links {
-	display: table;
-	flex-direction: column;
 }
 
 a:hover {
 	color:cadetblue;
-}
-
-#menu {
-	display: flex;
-	flex-direction: column;
-}
-
-#btns {
-	flex-direction: row;
 }
 
 #updateText {
@@ -130,8 +115,4 @@ a:hover {
 button:hover {
 	cursor: pointer;
 	background-color: #ddd;
-}
-
-button {
-	margin-right: 20px;
 }

@@ -6,7 +6,8 @@
 	const cols = 9;
 	const board = document.getElementById("sudoku");
 	const solveBtn = document.getElementById("solve");
-	const resetBtn = document.getElementById("reset");
+	const resetSolutionBtn = document.getElementById("resetSolution");
+	const resetEntryBtn = document.getElementById("resetEntries");
 	const solution = document.getElementById("solution");
 	const copiedBoard = [];
 	let timedOut = false;
@@ -140,6 +141,14 @@
 		return true;
 	};
 
+	const clearEntries = () => {
+		for (let y = 0; y < rows; y++) {
+			for (let x = 0; x < cols; x++) {
+				document.getElementById("s" + y + x).value = "";
+			}
+		}
+	};
+
 	const clearAnswers = () => {
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
@@ -149,9 +158,14 @@
 		}
 	};
 
-	resetBtn.addEventListener("click", () => {
+	resetSolutionBtn.addEventListener("click", () => {
 		solved = false;
 		clearAnswers();
+	});
+
+	resetEntryBtn.addEventListener("click", () => {
+		solved = false;
+		clearEntries();
 	});
 
 	solveBtn.addEventListener("click", () => {
