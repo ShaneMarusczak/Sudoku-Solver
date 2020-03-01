@@ -156,7 +156,7 @@
 
 	solveBtn.addEventListener("click", () => {
 		timedOut = false;
-		endTime = Date.now() + 6000;
+		endTime = Date.now() + 3000;
 		main();
 	});
 })();
