@@ -1,6 +1,6 @@
 "use strict";
 
-(function () {
+(() => {
 	let endTime;
 	const rows = 9;
 	const cols = 9;
