@@ -9,9 +9,13 @@
 	const resetSolutionBtn = document.getElementById("resetSolution");
 	const resetEntryBtn = document.getElementById("resetEntries");
 	const solution = document.getElementById("solution");
+	const generate = document.getElementById("generate");
 	const copiedBoard = [];
 	let timedOut = false;
 	let solved = false;
+
+	//inclusive
+	const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 	const mouseOverEntry = (e) => {
 		e.currentTarget.classList.add("hovered");
@@ -145,6 +149,7 @@
 		for (let y = 0; y < rows; y++) {
 			for (let x = 0; x < cols; x++) {
 				document.getElementById("s" + y + x).value = "";
+				copiedBoard[x][y] = "";
 			}
 		}
 	};
@@ -154,9 +159,28 @@
 			for (let x = 0; x < cols; x++) {
 				document.getElementById("a" + y + x).value = "";
 				document.getElementById("a" + y + x).style.color = "black";
+				copiedBoard[x][y] = "";
 			}
 		}
 	};
+
+	const generateRandomBoard = () => {
+		const a = randomIntFromInterval(1, 9);
+		const b = randomIntFromInterval(1, 9);
+		const c = randomIntFromInterval(1, 9);
+		for (let y = 0; y < rows; y++) {
+			for (let x = 0; x < cols; x++) {
+				copiedBoard[y][x] = "";
+			}
+		}
+		copiedBoard[a][b] = c;
+		solve();
+	};
+
+	generate.addEventListener("click", () => {
+		solved = false;
+		generateRandomBoard();
+	});
 
 	resetSolutionBtn.addEventListener("click", () => {
 		solved = false;
