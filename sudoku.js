@@ -1,6 +1,7 @@
 "use strict";
 
 (() => {
+	//#region variables
 	let endTime;
 	const rows = 9;
 	const cols = 9;
@@ -13,10 +14,9 @@
 	const copiedBoard = [];
 	let timedOut = false;
 	let solved = false;
+	//#endregion
 
-	//inclusive
-	const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-
+	//#region functions
 	const mouseOverEntry = (e) => {
 		e.currentTarget.classList.add("hovered");
 	};
@@ -25,24 +25,8 @@
 		e.currentTarget.classList.remove("hovered");
 	};
 
-	for (let i = 0; i < rows; i++) {
-		copiedBoard.push([]);
-		const entryRow = document.createElement("div");
-		const solutionRow = document.createElement("div");
-		board.appendChild(entryRow);
-		solution.appendChild(solutionRow);
-		for (let j = 0; j < cols; j++) {
-			const entry = document.createElement("input");
-			entry.addEventListener("mouseover", mouseOverEntry);
-			entry.addEventListener("mouseleave", mouseLeaveEntry);
-			const ans = document.createElement("input");
-			solutionRow.appendChild(ans);
-			entryRow.appendChild(entry);
-			entry.id = "s" + i + j;
-			ans.id = "a" + i + j;
-			ans.readOnly = true;
-		}
-	}
+	//inclusive
+	const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 	const main = () => {
 		if (validate()) {
@@ -186,7 +170,9 @@
 		copiedBoard[8][5] = randomIntFromInterval(1, 9);
 		solve();
 	};
+	//#endregion
 
+	//#region event listeners
 	generate.addEventListener("click", () => {
 		clearAnswers();
 		clearEntries();
@@ -213,4 +199,26 @@
 		endTime = Date.now() + 3000;
 		main();
 	});
+	//#endregion
+
+	//#region page setup
+	for (let i = 0; i < rows; i++) {
+		copiedBoard.push([]);
+		const entryRow = document.createElement("div");
+		const solutionRow = document.createElement("div");
+		board.appendChild(entryRow);
+		solution.appendChild(solutionRow);
+		for (let j = 0; j < cols; j++) {
+			const entry = document.createElement("input");
+			entry.addEventListener("mouseover", mouseOverEntry);
+			entry.addEventListener("mouseleave", mouseLeaveEntry);
+			const ans = document.createElement("input");
+			solutionRow.appendChild(ans);
+			entryRow.appendChild(entry);
+			entry.id = "s" + i + j;
+			ans.id = "a" + i + j;
+			ans.readOnly = true;
+		}
+	}
+	//#endregion
 })();
