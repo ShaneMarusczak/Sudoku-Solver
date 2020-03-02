@@ -105,7 +105,6 @@
 					for (let n = 1; n < 10; n++) {
 						if (possible(y, x, n)) {
 							copiedBoard[y][x] = n;
-							document.getElementById("a" + y + x).style.color = "red";
 							solve();
 							copiedBoard[y][x] = "";
 						}
@@ -165,29 +164,35 @@
 	};
 
 	const generateRandomBoard = () => {
-		const a = randomIntFromInterval(1, 9);
-		const b = randomIntFromInterval(1, 9);
-		const c = randomIntFromInterval(1, 9);
-		for (let y = 0; y < rows; y++) {
-			for (let x = 0; x < cols; x++) {
-				copiedBoard[y][x] = "";
-			}
-		}
-		copiedBoard[a][b] = c;
+		copiedBoard[0][0] = randomIntFromInterval(1, 9);
+		copiedBoard[4][1] = randomIntFromInterval(1, 9);
+		copiedBoard[2][4] = randomIntFromInterval(1, 9);
+		copiedBoard[3][3] = randomIntFromInterval(1, 9);
+		copiedBoard[5][8] = randomIntFromInterval(1, 9);
+		copiedBoard[7][2] = randomIntFromInterval(1, 9);
+		copiedBoard[1][7] = randomIntFromInterval(1, 9);
+		copiedBoard[6][6] = randomIntFromInterval(1, 9);
+		copiedBoard[8][5] = randomIntFromInterval(1, 9);
 		solve();
 	};
 
 	generate.addEventListener("click", () => {
+		clearAnswers();
+		clearEntries();
+		timedOut = false;
 		solved = false;
+		endTime = Date.now() + 3000;
 		generateRandomBoard();
 	});
 
 	resetSolutionBtn.addEventListener("click", () => {
+		timedOut = false;
 		solved = false;
 		clearAnswers();
 	});
 
 	resetEntryBtn.addEventListener("click", () => {
+		timedOut = false;
 		solved = false;
 		clearEntries();
 	});
