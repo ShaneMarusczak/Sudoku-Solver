@@ -62,6 +62,17 @@
 	};
 
 	const validate = () => {
+		let counter = 0;
+		for (let y = 0; y < rows; y++) {
+			for (let x = 0; x < cols; x++) {
+				if (document.getElementById("s" + y + x).value !== "") {
+					counter++;
+				}
+			}
+		}
+		if (counter === 0) {
+			return false;
+		}
 		var rv = true;
 		const validValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ""];
 		for (let y = 0; y < rows; y++) {
