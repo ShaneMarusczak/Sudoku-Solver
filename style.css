@@ -53,8 +53,9 @@ body {
 	background-color: rgb(159, 205, 243);
 }
 
-#sudoku > div > input:focus {
-	background-color: rgb(159, 205, 243);
+#sudoku > div > input:focus,
+#sudoku > div > input:hover {
+	background-color: rgb(159, 205, 243) !important;
 }
 
 button {

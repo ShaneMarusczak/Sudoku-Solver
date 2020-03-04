@@ -17,13 +17,6 @@
 	//#endregion
 
 	//#region functions
-	const mouseOverEntry = (e) => {
-		e.currentTarget.classList.add("hovered");
-	};
-
-	const mouseLeaveEntry = (e) => {
-		e.currentTarget.classList.remove("hovered");
-	};
 
 	//inclusive
 	const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
@@ -210,8 +203,6 @@
 		solution.appendChild(solutionRow);
 		for (let j = 0; j < cols; j++) {
 			const entry = document.createElement("input");
-			entry.addEventListener("mouseover", mouseOverEntry);
-			entry.addEventListener("mouseleave", mouseLeaveEntry);
 			const ans = document.createElement("input");
 			solutionRow.appendChild(ans);
 			entryRow.appendChild(entry);
