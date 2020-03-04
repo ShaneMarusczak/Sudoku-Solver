@@ -153,13 +153,13 @@
 
 	const generateRandomBoard = () => {
 		copiedBoard[0][0] = randomIntFromInterval(1, 9);
-		copiedBoard[4][1] = randomIntFromInterval(1, 9);
+		copiedBoard[1][7] = randomIntFromInterval(1, 9);
 		copiedBoard[2][4] = randomIntFromInterval(1, 9);
 		copiedBoard[3][3] = randomIntFromInterval(1, 9);
+		copiedBoard[4][1] = randomIntFromInterval(1, 9);
 		copiedBoard[5][8] = randomIntFromInterval(1, 9);
-		copiedBoard[7][2] = randomIntFromInterval(1, 9);
-		copiedBoard[1][7] = randomIntFromInterval(1, 9);
 		copiedBoard[6][6] = randomIntFromInterval(1, 9);
+		copiedBoard[7][2] = randomIntFromInterval(1, 9);
 		copiedBoard[8][5] = randomIntFromInterval(1, 9);
 		solve();
 	};
