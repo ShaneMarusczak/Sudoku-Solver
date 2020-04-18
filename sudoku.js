@@ -209,6 +209,14 @@
 			entry.id = "s" + i + j;
 			ans.id = "a" + i + j;
 			ans.readOnly = true;
+			if (j === 2 || j === 5) {
+				entry.classList.add("rightBorder");
+				ans.classList.add("rightBorder");
+			}
+			if (i === 2 || i === 5) {
+				entry.classList.add("bottomBorder");
+				ans.classList.add("bottomBorder");
+			}
 		}
 	}
 	//#endregion
