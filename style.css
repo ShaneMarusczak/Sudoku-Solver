@@ -12,6 +12,38 @@ h1 {
 	margin-bottom: 5px;
 }
 
+#githubicon {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	right: 10vw;
+	top: 40px;
+	transition: 1.5s;
+	z-index: 0;
+	background-color: transparent;
+	border-radius: 30px;
+}
+
+#githubicon:hover {
+	transform: translateY(-5px);
+	background-color: azure;
+}
+
+#homeIcon {
+	position: absolute;
+	top: 40px;
+	left: 5vw;
+	width: 60px;
+	height: 60px;
+	transition: 1.5s;
+	z-index: 0;
+	background-color: transparent;
+}
+
+#homeIcon:hover {
+	transform: translateY(-5px);
+}
+
 body {
 	margin-left: 10vw;
 	margin-top: 5vh;
@@ -37,8 +69,8 @@ body {
 	background-color: rgb(159, 205, 243);
 }
 
-#sudoku > div > input:focus,
-#sudoku > div > input:hover {
+#sudoku>div>input:focus,
+#sudoku>div>input:hover {
 	background-color: rgb(159, 205, 243) !important;
 }
 
@@ -58,10 +90,12 @@ button {
 }
 
 @media screen and (max-width: 1427px) {
-	#sudoku > div,
-	#solution > div {
+
+	#sudoku>div,
+	#solution>div {
 		display: flex;
 	}
+
 	#boards {
 		flex-direction: column;
 	}
@@ -89,7 +123,7 @@ input {
 }
 
 a:hover {
-	color:cadetblue;
+	color: cadetblue;
 }
 
 #updateText {
