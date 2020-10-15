@@ -1,137 +1,133 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 
-
 html {
-	background-color: cornsilk;
-	font-family: "Orbitron", sans-serif;
+  background-color: cornsilk;
+  font-family: "Orbitron", sans-serif;
 }
 
 h1 {
-	font-size: 4vh;
-	margin-left: 10px;
-	margin-bottom: 5px;
+  font-size: 4vh;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 #githubicon {
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	right: 10vw;
-	top: 40px;
-	transition: 1.5s;
-	z-index: 0;
-	background-color: transparent;
-	border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 10vw;
+  top: 40px;
+  transition: 1.5s;
+  z-index: 0;
+  background-color: transparent;
+  border-radius: 30px;
 }
 
 #githubicon:hover {
-	transform: translateY(-5px);
-	background-color: azure;
+  transform: translateY(-5px);
+  background-color: azure;
 }
 
 #homeIcon {
-	position: absolute;
-	top: 40px;
-	left: 5vw;
-	width: 60px;
-	height: 60px;
-	transition: 1.5s;
-	z-index: 0;
-	background-color: transparent;
+  position: absolute;
+  top: 40px;
+  left: 5vw;
+  width: 60px;
+  height: 60px;
+  transition: 1.5s;
+  z-index: 0;
+  background-color: transparent;
 }
 
 #homeIcon:hover {
-	transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 body {
-	margin-left: 10vw;
-	margin-top: 5vh;
+  margin-left: 10vw;
+  margin-top: 5vh;
 }
 
 .rightBorder {
-	border-right: 4px solid black !important;
-
+  border-right: 4px solid black !important;
 }
 
 .bottomBorder {
-	border-bottom: 4px solid black !important;
-
+  border-bottom: 4px solid black !important;
 }
 
 #sudoku,
 #solution {
-	display: grid;
-	margin-right: 30px;
+  display: grid;
+  margin-right: 30px;
 }
 
 .hovered {
-	background-color: rgb(159, 205, 243);
+  background-color: rgb(159, 205, 243);
 }
 
-#sudoku>div>input:focus,
-#sudoku>div>input:hover {
-	background-color: rgb(159, 205, 243) !important;
+#sudoku > div > input:focus,
+#sudoku > div > input:hover {
+  background-color: rgb(159, 205, 243) !important;
 }
 
 button {
-	margin-top: 25px;
-	margin-right: 20px;
-	margin-bottom: 20px;
-	font-family: "Orbitron", sans-serif;
-	font-size: x-large;
-	width: 150px;
-	height: 75px;
+  margin-top: 25px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-family: "Orbitron", sans-serif;
+  font-size: x-large;
+  width: 150px;
+  height: 75px;
 }
 
 #boards {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 1427px) {
+  #sudoku > div,
+  #solution > div {
+    display: flex;
+  }
 
-	#sudoku>div,
-	#solution>div {
-		display: flex;
-	}
-
-	#boards {
-		flex-direction: column;
-	}
+  #boards {
+    flex-direction: column;
+  }
 }
 
 input {
-	border: 1px solid black;
-	width: 2em;
-	height: 2em;
-	text-align: center;
-	font-size: xx-large;
-	background-color: aliceblue;
+  border: 1px solid black;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  font-size: xx-large;
+  background-color: aliceblue;
 }
 
 .show {
-	display: block;
+  display: block;
 }
 
 .hide {
-	display: none;
+  display: none;
 }
 
 #invalidmessage {
-	color: red;
+  color: red;
 }
 
 a:hover {
-	color: cadetblue;
+  color: cadetblue;
 }
 
 #updateText {
-	font-size: small;
-	margin-top: 10px;
+  font-size: small;
+  margin-top: 10px;
 }
 
 button:hover {
-	cursor: pointer;
-	background-color: #ddd;
+  cursor: pointer;
+  background-color: #ddd;
 }
