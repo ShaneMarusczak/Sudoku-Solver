@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
-
 html {
-  background-color: cornsilk;
-  font-family: "Orbitron", sans-serif;
+  background-color: #b0c4de;
+  font-family: "Roboto Mono", monospace;
 }
 
 h1 {
@@ -25,7 +23,7 @@ h1 {
 
 #githubicon:hover {
   transform: translateY(-5px);
-  background-color: azure;
+  background-color: linen;
 }
 
 #homeIcon {
@@ -75,7 +73,7 @@ button {
   margin-top: 25px;
   margin-right: 20px;
   margin-bottom: 20px;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Roboto Mono", monospace;
   font-size: x-large;
   width: 150px;
   height: 75px;
