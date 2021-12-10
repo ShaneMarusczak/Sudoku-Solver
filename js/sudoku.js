@@ -51,7 +51,7 @@
     if (counter === 0) {
       return false;
     }
-    var rv = true;
+    let rv = true;
     const validValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", ""];
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < cols; x++) {
@@ -75,8 +75,6 @@
     if (confirm("No solution was found in time. Clear entries and retry?")) {
       alert("Page will Reload.");
       setInterval(() => location.reload(), 1000);
-    } else {
-      return;
     }
   };
 
@@ -91,7 +89,7 @@
     }
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < cols; x++) {
-        if (copiedBoard[y][x] == "") {
+        if (copiedBoard[y][x] === "") {
           for (let n = 1; n < 10; n++) {
             if (possible(y, x, n)) {
               copiedBoard[y][x] = n;
@@ -113,12 +111,12 @@
 
   const possible = (y, x, n) => {
     for (let i = 0; i < 9; i++) {
-      if (copiedBoard[y][i] == n) {
+      if (copiedBoard[y][i] === n) {
         return false;
       }
     }
     for (let i = 0; i < 9; i++) {
-      if (copiedBoard[i][x] == n) {
+      if (copiedBoard[i][x] === n) {
         return false;
       }
     }
@@ -126,7 +124,7 @@
     const y0 = Math.floor(y / 3) * 3;
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
-        if (copiedBoard[y0 + i][x0 + j] == n) {
+        if (copiedBoard[y0 + i][x0 + j] === n) {
           return false;
         }
       }
